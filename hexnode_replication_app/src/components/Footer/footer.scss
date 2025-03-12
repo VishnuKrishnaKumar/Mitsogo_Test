@@ -1,0 +1,28 @@
+@import '../../styles/global.scss';
+
+footer{
+    padding: 1.0625rem 0;
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .footer_nav{
+            display: flex;
+            align-items: center;
+            li{
+                display: flex;
+                align-items: center;
+                &::after{
+                    content: '-';
+                    display: block;
+                    margin: 0 .34rem;
+                    padding-bottom: 2px;
+                    color: $textDark500;
+                }
+            }
+            a{
+                color: $textDark500;
+            }
+        }
+    }
+}

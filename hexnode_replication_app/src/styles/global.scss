@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import './mixins.scss';
+// variables
+
+$primary: #dd2135;
+$secondary: #fff;
+$tertiary: #000;
+$background300: #f7f7f7;
+$background350: #eceded;
+$border300: #d7d7d7;
+$background400: #020a190d;
+$background600: #050b19;
+$background700: #1a1c2b;
+$textDark500: #020a19;
+$dim_6: rgba(255,255,255,.6);
+
+// base
+body{
+    background-color: $secondary;
+    line-height: 1.559;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Mulish", sans-serif;
+    font-weight: 400;
+}
+h1,h2,h3,h4{
+    font-weight: 700;
+}
+html {
+    font-size: 16px;
+    @include mq(xl){
+        font-size: 14px;
+    }
+    @include mq(md){
+        font-size: 13px;
+    }
+}
+
+body {
+    font-size: 1rem;
+    color: $secondary;
+   
+}
+
+a {
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+li {
+    list-style: none;
+}
+#root {
+    width: 100%;
+}

@@ -1,0 +1,212 @@
+@import "../../styles/global.scss";
+@import "../../styles/mixins.scss";
+
+header {
+    padding-top: 0.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 99;
+    transition: 0.4s;
+    border-bottom: 1px solid transparent;
+
+    .container {
+        display: flex;
+        align-items: center;
+        padding-top: 0.63rem;
+        padding-bottom: 0.63rem;
+        transition: 0.4s;
+
+        .navigation_list {
+            display: flex;
+            align-items: center;
+            li {
+                & + li {
+                    margin-left: 1.8rem;
+                }
+            }
+            @include mq(xl){
+                li {
+                    width: 100%;
+                    & + li {
+                        margin-left: 0;
+                    }
+                    a {
+                        color: $textDark500;
+                        text-align: left;
+                        padding: 1rem 2rem;
+                        display: block;
+                        width: 100%;
+                        border-bottom: 1px solid $background300;
+                    }
+                    margin: 0;
+                }
+            }
+        }
+        .main_logo {
+            font-size: 1.6rem;
+            line-height: 1;
+            margin-right: 1.9rem;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            &.active {
+                right: 0;
+                align-items: start;
+                padding-top: 70px;
+            }
+            @include mq(xl) {
+                position: fixed;
+                transition: 0.4s;
+                right: -100%;
+                width: 50%;
+                background: $secondary;
+                top: 0;
+                bottom: 0;
+                color: $textDark500;
+                flex-direction: column;
+                justify-content: unset;
+                .navigation_list {
+                    flex-direction: column;
+                    width: 100%;
+                  
+                }
+                .btn{
+                    width: 100%;
+                    margin: .5rem auto;
+                    width: 90%;
+                    
+
+                }
+               
+            }
+        }
+    }
+    &.active {
+        background-color: $secondary;
+        border-bottom: 1px solid #dbd9d2;
+        .hamburger{
+            .line{
+                background-color: $tertiary;
+            }
+        }
+        .logo {
+            color: $textDark500;
+        }
+        .container {
+            padding-bottom: 1.2rem;
+            @include mq(xsm){
+                padding-bottom: 0;
+            }
+        }
+        nav {
+            li {
+                a {
+                    color: $textDark500;
+                }
+            }
+        }
+    }
+    @include mq(xl){
+        padding-top: .8rem;
+        padding-bottom: .8rem;
+    }
+    @include mq(md){
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .login_link{
+        display: none;
+        @include mq(xl){
+            display: block;
+            color: $textDark500;
+            text-align: center;
+            margin-top: 1.3rem;
+            width: 100%;
+        }
+    }
+}
+
+// hamburger
+.hamburger {
+    display: none;
+    @include btnDefaultRemoved();
+    @include mq(xl) {
+        display: block;
+        margin-left: auto;
+        z-index: 2;
+    }
+    &.active {
+        .line {
+            background-color: $background600;
+        }
+    }
+}
+.hamburger .line {
+    width: 24px;
+    height: 3px;
+    background-color: #ecf0f1;
+    display: block;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#hamburger {
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#hamburger.active {
+    animation: smallbig 0.6s forwards;
+}
+
+@keyframes smallbig {
+    0%,
+    100% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+        transform: scale(1);
+    }
+
+    50% {
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        -o-transform: scale(0);
+        transform: scale(0);
+    }
+}
+
+#hamburger.active .line:nth-child(1),
+#hamburger.active .line:nth-child(2),
+#hamburger.active .line:nth-child(3) {
+    -webkit-transition-delay: 0.2s;
+    -o-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+}
+
+#hamburger.active .line:nth-child(2) {
+    opacity: 0;
+}
+
+#hamburger.active .line:nth-child(1) {
+    -webkit-transform: translateY(13px) rotate(45deg);
+    -ms-transform: translateY(13px) rotate(45deg);
+    -o-transform: translateY(13px) rotate(45deg);
+    transform: translateY(13px) rotate(45deg);
+}
+
+#hamburger.active .line:nth-child(3) {
+    -webkit-transform: translateY(-4px) rotate(-45deg);
+    -ms-transform: translateY(-4px) rotate(-45deg);
+    -o-transform: translateY(-4px) rotate(-45deg);
+    transform: translateY(-4px) rotate(-45deg);
+}

@@ -1,0 +1,146 @@
+@import "../../styles/global.scss";
+@import "../../styles/mixins.scss";
+
+.features {
+    position: relative;
+    z-index: 1;
+    .cnt_wrap{
+        position: relative;
+    }
+    .features_list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 2.75rem;
+        column-gap: 16%;
+        @include mq(xl){
+            column-gap: 4%;
+        }
+        @include mq(md){
+            grid-template-columns: repeat(1, 1fr);
+        }
+        li {
+            background-color: $secondary;
+            border-radius: 1rem;
+            overflow: hidden;
+            border: 1px solid $border300;
+            max-width: 480px;
+            @include mq(xl){
+                max-width: 100%;
+            }
+            @include mq(md){
+                max-width: 340px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        
+            .features_cnt {
+                padding: 2.81rem;
+               
+            }
+            p {
+                margin-top: 1.1875rem;
+            }
+        }
+        li:nth-child(even){
+            margin-left: auto;
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+            span {
+                display: flex;
+                align-items: center;
+                margin-right: 0.625rem;
+            }
+            h3 {
+                line-height: 1.3;
+            }
+        }
+    }
+    
+    .logo_wrap {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: -1;
+        border-radius: 45px;
+        overflow: hidden;
+
+        .left_border,
+        .right_border {
+            display: block;
+            width: 19%;
+            height: 63%;
+            padding: 10px;
+            border-radius: inherit;
+            position: absolute;
+            clip-path: inset(0 0 0 0 round 45px);
+            animation: border-dance 5s infinite linear;
+            border-radius: 4rem;
+            background:
+                linear-gradient(90deg, #c9cacd 50%, transparent 50%) 0 0 / 10px 100% repeat-x,
+                linear-gradient(90deg, #c9cacd 50%, transparent 50%) 0 100% / 10px 100% repeat-x,
+                linear-gradient(0deg, #c9cacd 50%, transparent 50%) 100% 0 / 100% 10px repeat-y;
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: calc(100% - 5px);
+                background-color: $background300;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                border-radius: 4rem;
+            }
+        }
+
+        .right_border {
+            left: 61%;
+            transform: translateX(-50%);
+            &::after {
+                left: calc(50% + 2px);
+            }
+        }
+
+        .left_border {
+            left: 39%;
+            transform: translateX(-50%);
+            background:
+                linear-gradient(90deg, #c9cacd 50%, transparent 50%) 0 0 / 10px 100% repeat-x,
+                linear-gradient(90deg, #c9cacd 50%, transparent 50%) 0 100% / 10px 100% repeat-x,
+                linear-gradient(0deg, #c9cacd 50%, transparent 50%) 100% 0 / 100% 10px repeat-y;
+            &::after {
+                left: calc(50% - 2px);
+            }
+        }
+        .logo_center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 105px;
+            height: 105px;
+        }
+        @include mq(xl){
+            display: none;
+        }
+    }
+}
+@keyframes border-dance {
+    0% {
+        background-position:
+            0px 0px,
+            300px 116px,
+            0px 150px,
+            216px 0px;
+    }
+    100% {
+        background-position:
+            300px 0px,
+            0px 116px,
+            0px 0px,
+            216px 150px;
+    }
+}

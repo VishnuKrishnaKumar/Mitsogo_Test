@@ -1,0 +1,43 @@
+@import '../../styles/global.scss';
+@import '../../styles/mixins.scss';
+
+
+
+.device_management {
+    .device_management_list {
+        display: grid;
+        grid-template-columns: repeat(3 , 1fr);
+        // row-gap: 12%;
+        column-gap: 7%;
+       
+        li{
+            margin-bottom:25%;
+        }
+        .cnt{
+            figure{
+                border-radius: 1rem;
+                overflow: hidden;
+                margin-bottom: 1.6rem;
+            }
+        }
+        @include mq(xl){
+            column-gap: 4%;
+        }
+        @include mq(lg){
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include mq(sm){
+            grid-template-columns: repeat(1,1fr);
+            max-width: 340px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            li{
+                margin-bottom: 3rem;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            };
+        }
+    }
+}

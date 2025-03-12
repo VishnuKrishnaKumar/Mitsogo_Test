@@ -1,0 +1,90 @@
+@mixin btnDefaultRemoved {
+    border: unset;
+    background: unset;
+    border-radius: 0;
+    &:hover {
+        outline: none;
+        box-shadow: 0;
+    }
+
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+}
+@mixin btnHover($bg_color: transparent, $textColor: inherit, $psuedo: after) {
+    position: relative;
+    z-index: 1;
+
+    &::#{$psuedo} {
+        @include pseudo();
+        @include pseudo_pos(unset, 0, -3px, 0);
+        background: $bg_color;
+        transition: 0.4s ease-in-out;
+        -webkit-transition: 0.4s ease-in-out;
+        -moz-transition: 0.4s ease-in-out;
+        -ms-transition: 0.4s ease-in-out;
+        -o-transition: 0.4s ease-in-out;
+        height: 0;
+        z-index: -2;
+    }
+
+    &:hover {
+        color: $textColor;
+
+        &::#{$psuedo} {
+            height: calc(100% + 3px);
+        }
+    }
+}
+
+@mixin flexWidth($width) {
+    flex-basis: $width;
+    max-width: $width;
+}
+
+@mixin mq($point, $max_min: max-width) {
+    @if $point==custom {
+        @media (#{$max_min}: 1700px) {
+            @content;
+        }
+    }
+
+    @if $point==xxxl {
+        @media (#{$max_min}: 1600px) {
+            @content;
+        }
+    } @else if $point==xxl {
+        @media (#{$max_min}: 1400px) {
+            @content;
+        }
+    } @else if $point==xl {
+        @media (#{$max_min}: 1280px) {
+            @content;
+        }
+    } @else if $point==lg {
+        @media (#{$max_min}: 1023px) {
+            @content;
+        }
+    } @else if $point==landscape {
+        @media (#{$max_min}: 850px) {
+            @content;
+        }
+    } @else if $point==md {
+        @media (#{$max_min}: 767px) {
+            @content;
+        }
+    } @else if $point==sm {
+        @media (#{$max_min}: 639px) {
+            @content;
+        }
+    } @else if $point==xsm {
+        @media (#{$max_min}: 480px) {
+            @content;
+        }
+    } @else if $point==xxsm {
+        @media (#{$max_min}: 397px) {
+            @content;
+        }
+    }
+}

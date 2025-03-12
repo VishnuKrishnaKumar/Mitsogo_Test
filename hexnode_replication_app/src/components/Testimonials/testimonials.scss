@@ -1,0 +1,173 @@
+@import "../../styles/global.scss";
+@import "../../styles/mixins.scss";
+
+.testimonial {
+    .swiper-button-next.swiper-button-disabled {
+        pointer-events: unset !important;
+        cursor: no-drop !important;
+        opacity: 1;
+        color: #c2c4c6;
+    }
+    .wrap {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        padding-left: 10%;
+        padding-right: 10%;
+        @include mq(lg){
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 6rem;
+        }
+        @include mq(sm){
+            padding-bottom: 3rem
+        }
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            transition: 0.4s;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            filter: grayscale(100%);
+            &::after {
+                font-size: 1.1rem;
+                background-color: $background300;
+                width: 56px;
+                min-width: 56px;
+                height: 56px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 1rem;
+                overflow: hidden;
+            }
+            @include mq(lg) {
+                // position: static;
+                transform: unset;
+                margin-left: auto;
+                margin-right: auto;
+                display: inline-flex;
+                bottom: 0;
+                top: unset;
+            }
+        }
+        .swiper-button-prev {
+            left: 2rem;
+            @include mq(lg){
+                left: 42%;
+            }
+        }
+        .swiper-button-next {
+            right: 2rem;
+            @include mq(lg){
+                right: 42%;
+            }
+        }
+        .swiper,
+        .swiper-wrapper {
+            position: static;
+        }
+    }
+    .swiper-pagination {
+        display: none;
+    }
+    .testimonial_cnt {
+        border-radius: 1.125rem;
+        overflow: hidden;
+        @include mq(sm){
+            text-align: center
+        }
+        figure {
+            @include flexWidth(320px);
+            img {
+                object-fit: cover;
+            }
+            @include mq(lg){
+                max-width: 205px;
+            }
+            @include mq(md){
+                max-width: 100%;
+            }
+        }
+        display: flex;
+        .cnt {
+            @include flexWidth(calc(100% - 320px));
+            justify-content: space-between;
+            display: flex;
+            flex-direction: column;
+            @include mq(lg){
+                @include flexWidth(calc(100% - 205px));
+            }
+            @include mq(md){
+                @include flexWidth(100%);
+            }
+        }
+        .author {
+            font-weight: bold;
+            margin-bottom: 0.2em;
+            @include mq(sm){
+                font-size: 1.5rem;
+            }
+        }
+        .top {
+            padding: 2.5rem;
+        }
+        .bottom {
+            padding: 2rem;
+            background-color: $background350;
+            @include mq(lg){
+                padding: 1.2rem 2rem;
+            }
+            span {
+                display: block;
+            }
+        }
+        @include mq(sm){
+            flex-direction: column;
+            max-width: 400px;
+            width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    .logo_wrap {
+        position: relative;
+        margin-top: 2.5rem;
+        .swiper-slide {
+            img {
+                object-fit: contain;
+                max-width: 186px;
+                height: 73px;
+                
+                @include mq(lg){
+                    max-width: 135px;
+                    height: 50px;
+                }
+            }
+        }
+        &::after,
+        &::before {
+            content: "";
+            width: 100px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            background: rgb(255, 255, 255);
+            z-index: 2;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 255, 255, 1) 41%,
+                rgba(255, 255, 255, 0.49343487394957986) 70%
+            );
+        }
+        &::before {
+            left: 0;
+        }
+        &::after {
+            right: 0;
+            transform: rotate(180deg);
+        }
+    }
+}

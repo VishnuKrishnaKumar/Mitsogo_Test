@@ -1,0 +1,84 @@
+@import "../../styles/global.scss";
+
+.recognition_section {
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
+    .recognition_list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 15rem;
+        align-items: center;
+        li {
+            position: relative;
+            &::after {
+                content: "";
+                width: 1px;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.3);
+                position: absolute;
+                left: -7.5rem;
+                top: 0;
+                bottom: 0;
+                @include mq(lg) {
+                    left: -3.5rem;
+                }
+            }
+            &:first-child {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+        .cnt {
+            img {
+                height: 25px;
+                object-fit: contain;
+                display: block;
+                margin-bottom: 1rem;
+            }
+            color: $dim_6;
+        }
+        @include mq(lg) {
+            grid-gap: 7rem;
+        }
+        @include mq(md) {
+            display: block;
+            max-width: 300px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            li {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                &::after {
+                    width: 100%;
+                    height: 2px;
+                    max-width: 30%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    position: static;
+                    margin: 3rem 0;
+                    display: block !important;
+                }
+                &:last-child {
+                    &::after {
+                        display: none !important;
+                    }
+                }
+            }
+            .cnt {
+                text-align: center;
+                img {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+        }
+    }
+    @include mq(sm){
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+}

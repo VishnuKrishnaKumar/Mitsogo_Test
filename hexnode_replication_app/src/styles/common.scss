@@ -1,0 +1,188 @@
+@import "./global.scss";
+@import "./mixins.scss";
+
+.img_full {
+    width: 100%;
+    height: 100%;
+}
+.container {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 88%;
+}
+// typography
+
+.text_xl {
+    font-size: 2.625rem;
+    line-height: 1.29;
+    margin-bottom: 0.25em;
+    @include mq(xsm){
+        font-size: 2.2rem;
+    }
+}
+.text_lg {
+    font-size: 2.5rem;
+    &.mb {
+        margin-bottom: 1em;
+        @include mq(xsm){
+            margin-bottom: 0.8em;
+        }
+    }
+    &.mb2 {
+        margin-bottom: 0.4em;
+    }
+    @include mq(xsm){
+        font-size: 2rem;
+    }
+}
+.text_md {
+    font-size: 2rem;
+    &.mb {
+        margin-bottom: 0.66em;
+    }
+    @include mq(xsm){
+        font-size: 1.7rem;
+    }
+}
+.text_md2 {
+    font-size: 1.875rem;
+}
+.text_sm {
+    font-size: 1.5rem;
+}
+.text_xs {
+    font-size: 1.25rem;
+}
+.text_base {
+    font-size: 1.125rem; /* base */
+}
+.text_xxs {
+    font-size: 1.0625rem;
+}
+.text_xxxs {
+    font-size: 1rem;
+}
+.text_xxxxs {
+    font-size: 0.94rem;
+}
+.text_xxxxxs {
+    font-size: 0.875rem;
+}
+.text__x {
+    font-size: 0.75rem;
+}
+.bg_dark {
+    color: $secondary;
+    a {
+        color: $secondary;
+    }
+}
+.bg_light {
+    color: $textDark500;
+    background: $background300;
+}
+.bg_white {
+    color: $textDark500;
+}
+.bg_dark_600 {
+    background: $background600;
+}
+.bg_dark_700 {
+    background: $background700;
+}
+.text_center {
+    text-align: center;
+}
+.btn {
+    @include btnDefaultRemoved();
+    padding: 0.715em 1.8em;
+    font-weight: bold;
+    border-radius: 3px;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    &.btn_primary {
+        background-color: $primary;
+    }
+    &.mt {
+        margin-top: 1.25rem;
+    }
+    &.lg {
+        min-height: 54px;
+        width: 100%;
+        max-width: 302px;
+    }
+}
+.dim {
+    color: hsla(220, 5%, 76%, 0.6);
+    font-weight: bold;
+}
+.email_capture_wrap {
+    display: flex;
+    align-items: center;
+    height: 3.3125em;
+    max-width: 470px;
+
+    .btn {
+        height: 100%;
+        color: $secondary;
+        margin-left: 8px;
+        min-width: 210px;
+        @include mq(sm) {
+            min-width: 158px;
+        }
+    }
+    @include mq(lg) {
+        max-width: 100%;
+    }
+}
+.field_wrap {
+    width: 100%;
+    height: 100%;
+    input {
+        width: 100%;
+        height: 100%;
+        border: unset;
+        padding-left: 0.8rem;
+        border-radius: 3px;
+        overflow: hidden;
+        font-size: 1rem;
+        &:focus {
+            outline: none;
+        }
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.3);
+            font-size: 1rem;
+        }
+    }
+}
+.cmn_spacing {
+    padding: 5rem 0;
+    @include mq(lg) {
+        padding: 4rem 0;
+    }
+}
+.short_container {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.short_container_lg {
+    @extend .short_container;
+    max-width: 1000px;
+}
+// .short_container_md{
+//     @extend .short_container;
+//     max-width: 960px;
+// }
+.lh_cmn {
+    line-height: 1.3;
+}
+.short_cnt {
+    margin-bottom: 3.125rem;
+}
+.text_primary {
+    color: $primary;
+}
