@@ -24,5 +24,8 @@ footer{
                 color: $textDark500;
             }
         }
+        @include mq(sm){
+            flex-direction: column;
+        }
     }
 }

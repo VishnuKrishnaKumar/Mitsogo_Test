@@ -57,9 +57,10 @@ const Testimonials = () => {
                         loop={true}
                         autoplay={{ delay: 2000, disableOnInteraction: false }}
                         breakpoints={{
-                            1025: { slidesPerView: 5 }, // Show 5 elements on screens 1025px and above
-                            768: { slidesPerView: 5 }, // Show 3 elements on mobile (below 1025px)
-                            480: { slidesPerView: 4 }, // Optional: Show 2 elements on very small screens
+                            1025: { slidesPerView: 5 }, // Show 5 elements on large screens (1025px and above)
+                            768: { slidesPerView: 3 }, // Show 3 elements on tablets (768px - 1024px)
+                            480: { slidesPerView: 3 }, 
+                            300: { slidesPerView: 2 },// Show 2 elements on mobile (below 480px)
                         }}
                     >
                         {testimonialData?.trusted_by?.map((el, index) => (
