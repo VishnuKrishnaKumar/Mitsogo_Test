@@ -5,7 +5,7 @@ import './comprehensiveDevicemanagement.scss';
 const ComprehensiveDeviceManagement = () => {
     const comprehensiveDeviceManagement = data?.comprehensive_device_management;
   return (
-    <section className="device_management cmn_spacing bg_white">
+    <section className="device_management cmn_spacing bg_white" id='features'>
         <div className="container">
             <h2 className='text_lg mb short_container text_center'>{comprehensiveDeviceManagement?.title}</h2>
             <ul className="device_management_list">
@@ -14,7 +14,7 @@ const ComprehensiveDeviceManagement = () => {
                         return(
                             <li key={index}>
                                 <div className="cnt">
-                                    <figure><img className='img_full' src={el?.image?.src} alt={el?.image?.alt} /></figure>
+                                    <figure className='cmn_shadow'><img className='img_full' src={el?.image?.src} alt={el?.image?.alt} loading="lazy"/></figure>
                                     <h3 className='text_md lh_cmn mb'>{el?.title}</h3>
                                     <p className='text_base'>{el?.description}</p>
                                 </div>

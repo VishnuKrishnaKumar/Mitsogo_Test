@@ -12,31 +12,7 @@
         outline: none;
     }
 }
-@mixin btnHover($bg_color: transparent, $textColor: inherit, $psuedo: after) {
-    position: relative;
-    z-index: 1;
 
-    &::#{$psuedo} {
-        @include pseudo();
-        @include pseudo_pos(unset, 0, -3px, 0);
-        background: $bg_color;
-        transition: 0.4s ease-in-out;
-        -webkit-transition: 0.4s ease-in-out;
-        -moz-transition: 0.4s ease-in-out;
-        -ms-transition: 0.4s ease-in-out;
-        -o-transition: 0.4s ease-in-out;
-        height: 0;
-        z-index: -2;
-    }
-
-    &:hover {
-        color: $textColor;
-
-        &::#{$psuedo} {
-            height: calc(100% + 3px);
-        }
-    }
-}
 
 @mixin flexWidth($width) {
     flex-basis: $width;

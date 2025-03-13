@@ -1,7 +1,12 @@
 export const data = {
     "header": {
         "logo": "Hexnode",
-        "navigation": ["Why Hexnode", "Features", "Platforms", "Customers"],
+        "navigation": [
+            { "text": "Why Hexnode", "url": "#why-hexnode" },
+            { "text": "Features", "url": "#features" },
+            { "text": "Platforms", "url": "#platforms" },
+            { "text": "Customers", "url": "#customers" }
+        ],
         "cta_button": {
             "text": "14 DAY FREE TRIAL",
             "link": "/free-trial"
@@ -33,7 +38,9 @@ export const data = {
                     "alt": "IDC Logo"
                 }
             },
-            "description": "Hexnode is listed as a leader and a major player in IDC MarketScape UEM Vendors Assessment Reports 2024."
+            "description": "Hexnode is listed as a leader and a major player in IDC MarketScape UEM Vendors Assessment Reports 2024.",
+            "cta_link": "https://www.hexnode.com/blogs/mitsogo-hexnode-named-a-leader-in-idc-marketscape-worldwide-uem-software-for-apple-devices-2024-vendor-assessment/"
+            
         },
         {
             "title": {
@@ -42,7 +49,8 @@ export const data = {
                     "alt": "Gartner Logo"
                 }
             },
-            "description": "Hexnode was recognized in the 2023 Gartner® Market Guide for Unified Endpoint Management Tools."
+            "description": "Hexnode was recognized in the 2023 Gartner® Market Guide for Unified Endpoint Management Tools.",
+            "cta_link": "https://www.hexnode.com/blogs/mitsogo-hexnode-named-a-leader-in-idc-marketscape-worldwide-uem-software-for-apple-devices-2024-vendor-assessment/"
         },
         {
             "title": {
@@ -51,7 +59,8 @@ export const data = {
                     "alt": "Forrester Logo"
                 }
             },
-            "description": "Forrester includes Hexnode as a Notable vendor in The Unified Endpoint Management Landscape, Q3 2023."
+            "description": "Forrester includes Hexnode as a Notable vendor in The Unified Endpoint Management Landscape, Q3 2023.",
+            "cta_link": "https://www.hexnode.com/blogs/mitsogo-hexnode-named-a-leader-in-idc-marketscape-worldwide-uem-software-for-apple-devices-2024-vendor-assessment/"
         }
     ],
     "why_hexnode": {
@@ -63,22 +72,38 @@ export const data = {
         "features": [{
                 "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><rect width='40' height='40' rx='6' fill='#f8faff'></rect><circle cx='20' cy='20' r='10' fill='#3371ed'></circle></svg>",
                 "title": "Adapt to the new normal",
-                "description": "Hybrid, remote, or onsite, you can trust Hexnode UEM to deliver. Enable choice yet take control over your organization's protocols."
+                "description": "Hybrid, remote or onsite, you can trust Hexnode UEM to deliver. Create policies that cater to your organization’s protocols. Whether it be BYOD, COPE, or platform limited, Hexnode can manage it all.",
+                "cta_link": {
+                    "text": "Try Hexnode on your endpoints",
+                    "url": "https://www.hexnode.com/android-management"
+                },
             },
             {
                 "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><rect width='40' height='40' rx='6' fill='#f8faff'></rect><circle cx='20' cy='20' r='10' fill='#3371ed'></circle></svg>",
                 "title": "Zero compromise security",
-                "description": "Enable full-fledged device encryption, data loss prevention, and advanced threat security with Hexnode UEM."
+                "description": "Enable full-fledged device encryption, data loss prevention, and all-rounded device security with Hexnode UEM. Be at the bleeding edge of device security without any compromises.",
+                "cta_link": {
+                    "text": "Try Hexnode on your endpoints",
+                    "url": "https://www.hexnode.com/android-management"
+                },
             },
             {
                 "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><rect width='40' height='40' rx='6' fill='#f8faff'></rect><circle cx='20' cy='20' r='10' fill='#3371ed'></circle></svg>",
                 "title": "Get more done with automation",
-                "description": "Hexnode UEM automation features help free up IT teams by automating repetitive tasks."
+                "description": "Hexnode UEM automation features help free up IT’s time spent on mundane and repetitive tasks. Do hours’ worth of work in a few minutes.",
+                "cta_link": {
+                    "text": "Try Hexnode on your endpoints",
+                    "url": "https://www.hexnode.com/android-management"
+                },
             },
             {
                 "icon": "<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'><rect width='40' height='40' rx='6' fill='#f8faff'></rect><circle cx='20' cy='20' r='10' fill='#3371ed'></circle></svg>",
                 "title": "Unified Policy Management",
-                "description": "Create & deploy policies through Hexnode and apply them to all devices in your organization."
+                "description": "Create a single policy through Hexnode and apply it on all the devices in your organization. Any platform or form factor, achive single pane of glass management with Hexnode.",
+                "cta_link": {
+                    "text": "Try Hexnode on your endpoints",
+                    "url": "https://www.hexnode.com/android-management"
+                },
             }
         ]
     },

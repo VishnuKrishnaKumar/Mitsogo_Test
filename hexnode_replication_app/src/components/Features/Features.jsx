@@ -6,7 +6,7 @@ import './features.scss';
 const Features = () => {
     const featuresData = data?.why_hexnode;
     return (
-        <section className="features bg_light cmn_spacing">
+        <section className="features bg_light cmn_spacing" id='why-hexnode'>
             <div className="container">
                 <h2 className='text_lg text_center mb'>{featuresData?.title}</h2>
                 <div className="cnt_wrap">
@@ -21,6 +21,7 @@ const Features = () => {
                                                 <h3 className='text_sm'>{el?.title}</h3>
                                             </div>
                                             <p className='text_base'>{el?.description}</p>
+                                            <a className="text_primary" href={el.cta_link?.url}>{el.cta_link.text}</a>
                                         </div>
                                     </li>
                                 )

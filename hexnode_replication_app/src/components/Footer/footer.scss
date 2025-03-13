@@ -19,6 +19,11 @@ footer{
                     padding-bottom: 2px;
                     color: $textDark500;
                 }
+                &:last-child{
+                    &::after{
+                        display: none;
+                    }
+                }
             }
             a{
                 color: $textDark500;

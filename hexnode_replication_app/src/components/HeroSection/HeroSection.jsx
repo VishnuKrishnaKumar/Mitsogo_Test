@@ -22,12 +22,14 @@ const HeroSection = () => {
                         src="https://static.hexnode.com/v2/assets/img/ads-pages/banner/banner.jpg"
                         alt="Hexnode UEM"
                         className="w-full h-auto filter grayscale"
+                        loading="lazy"
                     />
                     {/* Color image with clipping */}
                     <img
                         src="https://static.hexnode.com/v2/assets/img/ads-pages/banner/baner.png"
                         alt="Hexnode UEM Color"
                         className="absolute top-10 left-10 w-[40%] h-auto clip-path-circle"
+                        loading="lazy"
                     />
                     <ul className="badges_wrap">
                         {

@@ -68,12 +68,23 @@
             overflow: hidden;
             transition: 0.4s;
             border: 1px solid $background300;
+            @include mq(md) {
+                border: unset;
+                .item_short {
+                    border-radius: 1.3rem;
+                    overflow: hidden;
+                    background-color: $secondary;
+                }
+            }
             // border-bottom: 1px solid #d7d7d7;
 
             &.active {
                 border-radius: 1rem;
-                margin-top: -4px;
-
+                @include mq(md) {
+                    .item_short {
+                        border: 1px solid #d7d7d7;
+                    }
+                }
                 border-color: #d7d7d7;
                 & + .accordion_item {
                     .accordion_btn {
@@ -99,7 +110,7 @@
                 &::after {
                     content: "";
                     height: 1px;
-                    width: 100%;
+                    width: 92%;
                     background: #d7d7d7;
                     position: absolute;
                     bottom: 0;
@@ -126,6 +137,7 @@
                 a {
                     margin-top: 1rem;
                     display: block;
+                    font-weight: 600;
                 }
 
                 &.open {
@@ -136,6 +148,9 @@
                     background-color: $secondary;
                 }
             }
+            &.active {
+                margin-top: -2px;
+            }
         }
         @include mq(md) {
             @include flexWidth(100%);
@@ -143,9 +158,16 @@
     }
     .mobile_img {
         display: none;
-        @include mq(md){
+        @include mq(md) {
             display: block;
+            margin-bottom: 1.6rem;
+            margin-top: 1.6rem;
         }
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 1.2rem;
+        overflow: hidden;
         position: absolute;
         width: 100%;
         left: 0;
@@ -166,6 +188,9 @@
             transform: translateY(0);
             position: static; // Places the image correctly under the active item
             margin-top: 10px;
+            @include mq(md){
+                margin-top: 1.6rem;
+            }
         }
     }
 }

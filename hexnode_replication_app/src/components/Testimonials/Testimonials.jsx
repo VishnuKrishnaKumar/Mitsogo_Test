@@ -11,7 +11,7 @@ const Testimonials = () => {
     const testimonialData = data?.testimonials;
 
     return (
-        <section className="testimonial bg_white cmn_spacing">
+        <section className="testimonial bg_white cmn_spacing" id='customers'>
             <div className="container">
                 <h2 className='text_lg text_center mb'>{testimonialData?.title}</h2>
                 <div className="wrap short_container_md ">
@@ -28,7 +28,7 @@ const Testimonials = () => {
                             <SwiperSlide key={index}>
                                 <div className="testimonial_cnt">
                                     <figure>
-                                        <img src={el?.image?.src} alt={el?.image?.alt} className='img_full' />
+                                        <img src={el?.image?.src} alt={el?.image?.alt} className='img_full' loading="lazy"/>
                                     </figure>
                                     <div className='bg_light cnt'>
                                         <div className="top">
@@ -60,12 +60,12 @@ const Testimonials = () => {
                             1025: { slidesPerView: 5 }, // Show 5 elements on large screens (1025px and above)
                             768: { slidesPerView: 3 }, // Show 3 elements on tablets (768px - 1024px)
                             480: { slidesPerView: 3 }, 
-                            300: { slidesPerView: 2 },// Show 2 elements on mobile (below 480px)
+                            300: { slidesPerView: 3 },// Show 2 elements on mobile (below 480px)
                         }}
                     >
                         {testimonialData?.trusted_by?.map((el, index) => (
                             <SwiperSlide key={index}>
-                                <img src={el?.image?.url} alt={el?.image?.alt} className='img_full' />
+                                <img src={el?.image?.url} alt={el?.image?.alt} className='img_full' loading="lazy" />
                             </SwiperSlide>
                         ))}
                     </Swiper>

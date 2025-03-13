@@ -11,7 +11,7 @@ const MultiPlatform = () => {
     };
 
     return (
-        <section className="multi_selection_data bg_light cmn_spacing">
+        <section className="multi_selection_data bg_light cmn_spacing" id='platforms'>
             <div className="container">
                 <div className="short_cnt text_center">
                     <h2 className='text_lg mb2'>{multiPlatformData?.title}</h2>
@@ -21,8 +21,8 @@ const MultiPlatform = () => {
                     {/* Desktop Image */}
                     <div className="left">
                         {multiPlatformData?.supported_platforms?.platforms?.map((el, index) => (
-                            <figure key={index} className={activeIndex === index ? "active" : ""}>
-                                <img src={el?.image?.src} alt={el?.title} className='img_full' />
+                            <figure key={index} className={`${activeIndex === index ? "active" : ""} cmn_shadow`}>
+                                <img src={el?.image?.src} alt={el?.title} className="img_full" loading="lazy" />
                             </figure>
                         ))}
                     </div>
@@ -30,10 +30,10 @@ const MultiPlatform = () => {
                         {multiPlatformData?.supported_platforms?.platforms?.map((el, index) => (
                             <div className={`accordion_item ${activeIndex === index ? "active" : ""}`} key={index}>
                                 {/* Mobile Image */}
-                                <figure className={`mobile_img ${activeIndex === index ? "active" : ""}`}>
-                                    <img src={el?.image?.src} alt={el?.title} className='img_full' />
+                                <figure className={` cmn_shadow mobile_img ${activeIndex === index ? "active" : ""}`}>
+                                    <img src={el?.image?.src} alt={el?.title} className='img_full'loading="lazy" />
                                 </figure>
-                                <div>
+                                <div className='item_short'>
                                     <button
                                         className={`accordion_btn ${activeIndex === index ? "active" : ""}`}
                                         onClick={() => handleAccordionClick(index)}

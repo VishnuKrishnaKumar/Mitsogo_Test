@@ -8,7 +8,7 @@
     @include mq(xl) {
         padding-top: 0.2em;
     }
-    @include mq(sm){
+    @include mq(sm) {
         padding-bottom: 0;
     }
     .container {
@@ -79,6 +79,9 @@
                     @include mq(sm) {
                         font-size: 12px;
                     }
+                    @include mq(xsm) {
+                        font-size: 10px;
+                    }
                 }
                 &::after,
                 &::before {
@@ -96,6 +99,10 @@
                         width: 27px;
                         height: 27px;
                     }
+                    @include mq(xxsm) {
+                        width: 18px;
+                        height: 18px;
+                    }
                 }
                 &::after {
                     position: absolute;
@@ -112,6 +119,12 @@
                         height: 4px;
                         top: 14px;
                         left: 11px;
+                    }
+                    @include mq(xxsm) {
+                        width: 8px;
+                        height: 3px;
+                        top: 10px;
+                        left: 9px;
                     }
                 }
 
@@ -133,6 +146,9 @@
                     display: flex;
                     right: -5%;
                     top: 40%;
+                    @include mq(xxsm){
+                        top: 20%;
+                    }
                     &::after {
                         border-color: #45aec4;
                     }
@@ -169,5 +185,11 @@
         @include mq(xsm) {
             min-height: 278px;
         }
+        @include mq(xxsm) {
+            min-height: 230px;
+        }
+    }
+    @include mq(xl) {
+        margin-top: 61px;
     }
 }
